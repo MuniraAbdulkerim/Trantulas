@@ -1,26 +1,53 @@
 #include <iostream>
-#include <cctype> 
 using namespace std;
+int main()
+{
+    int rows, cols;
 
-int main() {
-    string input;
-    cout << "Enter a word: ";
-    cin >> input;
+    cout << "Enter number of rows: ";
+    cin >> rows;
+    cout << "Enter number of columns: ";
+    cin >> cols;
 
-    int length = input.length();
-    bool isPalindrome = true;
+    int arr[rows][cols];
 
-    for (int i = 0; i < length / 2; ++i) {
-        if (tolower(input[i]) != tolower(input[length - 1 - i])) {
-            isPalindrome = false;
-            break;
+    cout << "Enter array elements: " << endl;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            cin >> arr[i][j];
         }
     }
-
-    if (isPalindrome) {
-        cout << input << " is a palindrome." << endl;
-    } else {
-        cout << input << " is not a palindrome." << endl;
+    cout << "Array elements: " << endl;
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            cout << arr[i][j] << "  ";
+        }
+        cout << endl;
+    }
+    
+    cout << "Row elements multiplication: " << endl;
+    for (int i = 0; i < rows; i++)
+    {
+        int product = 1;
+        for (int j = 0; j < cols; j++)
+        {
+            product *= arr[i][j];
+        }
+        cout << product << endl;
+    }
+       cout << "Column elements sum: " << endl;
+    for (int i = 0; i < cols; i++)
+    {
+        int sum = 0;
+        for (int j = 0; j < rows; j++)
+        {
+            sum += arr[j][i];
+        }
+        cout << sum << endl;
     }
 
     return 0;
