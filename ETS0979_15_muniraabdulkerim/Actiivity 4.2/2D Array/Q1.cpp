@@ -1,28 +1,35 @@
 #include <iostream>
-#include <cctype>
 using namespace std;
-
-int main() {
-    string input;
-    cout << "Enter a string: ";
-    getline(cin, input);
-
-    int vowelsCount = 0;
-    int consonantsCount = 0;
-
-    for (char character : input) {
-        if (isalpha(character)) {
-            char lowerChar = tolower(character);
-            if (lowerChar == 'a' || lowerChar == 'e' || lowerChar == 'i' || lowerChar == 'o' || lowerChar == 'u') {
-                vowelsCount++;
-            } else {
-                consonantsCount++;
-            }
-        }
+int main()
+{
+       const int MAX_SIZE = 100;
+    int arr1[MAX_SIZE], arr2[MAX_SIZE];
+    int size;
+       
+    cout << "Enter the size of the arrays: ";
+    cin >> size;
+       
+    cout << "Enter " << size << " numbers for array 1: ";
+    for(int i = 0; i < size; i++) {
+        cin >> arr1[i];
     }
+       
+    cout << "Enter " << size << " numbers for array 2: ";
+    for(int i = 0; i < size; i++) {
+        cin >> arr2[i];
+    }
+  for(int i = 0; i < size; i++) {
+        if(arr1[i] = arr2[i])
+    {
+        cout << "The two array have identical data.";
+    }
+  }
 
-    cout << "Number of vowels: " << vowelsCount << endl;
-    cout << "Number of consonants: " << consonantsCount << endl;
-
+      for(int i = 0; i < size; i++) {
+        if(arr1[i] != arr2[i])
+         {
+        cout << "The two are do not have identical data";
+          }
+      }
     return 0;
 }
